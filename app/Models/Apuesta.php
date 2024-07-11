@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Apuesta extends Model
+{
+    use HasFactory;
+    protected $fillable = ['juego_id', 'fecha', 'monto'];
+
+    public function juego()
+    {
+        return $this->belongsTo(Juego::class);
+    }
+}
